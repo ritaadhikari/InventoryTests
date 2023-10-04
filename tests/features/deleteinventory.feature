@@ -5,7 +5,7 @@ Feature:
 
     Background:
         Given User has navigated to login page
-        And User enters email "sandesh.blacktechgmail.com" and password "password"
+        And User enters email "ritaadhikari936@gmail.com" and password "control@123"
         And the user has navigated to the home page
         And the user has clicked the Inventory button
         And the user navigated to Inventory page
