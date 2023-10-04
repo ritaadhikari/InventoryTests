@@ -12,6 +12,11 @@ class CostumerPage {
     this.sucessToast = "//div[@class='toastify-body']";
     this.costumerAddedLocator =
       "//div[@id='row-0']//div[@id='cell-name-undefined']";
+    this.threeDotButton = "//div[@class='btn btn-sm']//*[name()='svg']";
+    this.editButton =
+      "//div[@class='app-content content overflow-hidden todo-application']//button[3]";
+    this.updateButton = "//button[@type='submit']";
+    this.successMessage = "//div[@class='toastify-header']";
   }
 
   async costumerPageLocator() {
@@ -40,6 +45,23 @@ class CostumerPage {
     const customerLocator = page.locator(this.costumerAddedLocator);
     const customerNameInnerText = await customerLocator.allInnerTexts();
     return customerNameInnerText;
+  }
+  async editCustomerInfo(name, number) {
+    await page.click(this.threeDotButton);
+    await page.click(this.editButton);
+    await page.click(this.nameField);
+    await page.fill(this.nameField, name);
+    await page.click(this.phonenoFiled);
+    await page.fill(this.phonenoFiled, number);
+    await page.click(this.updateButton);
+    // await page.pause();
+  }
+
+  async editSucessConfirmation() {
+    const sucessSelector = page.locator(this.successMessage);
+    await page.pause();
+    await expect(sucessSelector).toBeVisible();
+    await page.pause();
   }
 }
 

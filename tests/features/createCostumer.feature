@@ -17,7 +17,7 @@ Feature:
 
             Examples:
             |Name                 |Number             |Due           |Message                        |
-            |Samp             |049398485438       |67            |Customer of that name already exists.|
-            |Sura               |9838378479348      |7854          |Customer of that name already exists.|
+            |Tamp             |049398485438       |67            |Customer of that name already exists.|
+            |Tura               |9838378479348      |7854          |Customer of that name already exists.|
 
         
