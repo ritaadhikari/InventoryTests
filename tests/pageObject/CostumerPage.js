@@ -17,6 +17,8 @@ class CostumerPage {
       "//div[@class='app-content content overflow-hidden todo-application']//button[3]";
     this.updateButton = "//button[@type='submit']";
     this.successMessage = "//div[@class='toastify-header']";
+    this.deleteOption = "//span[normalize-space()='Delete']";
+    this.confirmDelete = "//button[normalize-space()='Yes, delete customer']";
   }
 
   async costumerPageLocator() {
@@ -62,6 +64,11 @@ class CostumerPage {
     await page.pause();
     await expect(sucessSelector).toBeVisible();
     await page.pause();
+  }
+  async deleteCustomer() {
+    await page.click(this.threeDotButton);
+    await page.click(this.deleteOption);
+    await page.click(this.confirmDelete);
   }
 }
 
