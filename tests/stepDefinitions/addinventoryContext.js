@@ -8,6 +8,7 @@ const { InventoryPage } = require("../pageObject/InventoryPage.js");
 const loginPage = new LoginPage();
 const homePage = new HomePage();
 const inventoryPage = new InventoryPage();
+
 Given("User has navigated to login page", async function () {
   console.log("User has navigated to the login dashboard");
 
